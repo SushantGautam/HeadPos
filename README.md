@@ -5,21 +5,22 @@ Check the [live demo](https://sushantgautam.github.io/HeadPos/demo.html "live de
 
 # Usage
 
+Just include this JS dependency. Doesn't need JQuery.
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/SushantGautam/HeadPos/headpos.js"></script>
-<div id='headpos'></div>
 ```
 
 
 ```javascript
 <script>
-  OnResults = function (rs) {console.log(rs)}
 
-  let headpos = HeadPos.Init(
-    OnResults,  //callback on results
-    HeadPosDIV = document.getElementById('headpos'), // div to render video canvas
-    interval = 0 ); // time in ms to wait between callbacks, 0 is as fast as possible
+  // define a callback to handle the results
+  OnResults = function (rs) {console.log(rs)}
+  
+ // initlialize HeadPos. Other optional congifs can also be added as required.
+  let headpos = HeadPos.Init(OnResults);
+    
 </script>
 ```
 
@@ -54,6 +55,12 @@ let headpos = HeadPos.Init(
 	); 
 
 ```
+You can define a div/p element as:
+```html
+<div id='headpos'></div>
+```
+and pass rhe element to **HeadPosDIV**. The HeadPos output canvas will be prepended inside the given element. If nothing is passed, the canvas will be appended to the root of HTML.
+
 2. **updateInterval**
 Dynamically udate time in ms to wait between callbacks.
 
