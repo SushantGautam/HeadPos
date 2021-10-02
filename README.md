@@ -1,9 +1,9 @@
 This simplified library gives position (up/down/lest/right) of head/face including its magnitude/degree with the :six: faical keypoints (x,y). This is backed by MediaPipe. The whole library and its dependencies are just in KBs. The memory footprint is very low on realtime environment and can run on very low resources. There are options to control time between inferences which reduces unnecessary computations. 
 
-# Demo
+# 🚀 Demo
 Check the [live demo](https://sushantgautam.github.io/HeadPos/demo.html "live demo").
 
-# Usage
+# 📉 Usage
 
 Just include this JS dependency. Doesn't need JQuery.
 
@@ -24,7 +24,7 @@ Just include this JS dependency. Doesn't need JQuery.
 </script>
 ```
 
-# Results
+# 📊 Results
 ![image](https://user-images.githubusercontent.com/16721983/135709814-4f134c07-9ba5-4e02-abe4-47d6894819b5.png)
 
 Callback will get a dictionary with:
@@ -40,7 +40,7 @@ pose: {"..."}
 **pose** contains a dict with 6 key points (x,y) of right eye, left eye, nose tip, mouth center, right ear tragion, and left ear tragion and a reference to the canvas.
 
 
-# Methods
+# 🎈 Methods
 1. **InitHeadPos** 
 Initialize the instance. This library has a singleton implementation.
 
@@ -82,10 +82,10 @@ Resume the inference after pause. Canvas rendering will also resume.
 headpos.resume() 
 ```
 
-# Improving
+# 🙋 Improving
 PRs,issues, ideas or suggestions are highly welcome. 👌
 
-# Built With
+# 🏭  Built With
 - [google/mediapipe](https://google.github.io/mediapipe/solutions/face_detection#javascript-solution-api "google/mediapipe")
 - [jhabdas/fetch-inject](https://code.habd.as/jhabdas/fetch-inject "jhabdas/fetch-inject")
 
