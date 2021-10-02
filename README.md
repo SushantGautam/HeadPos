@@ -12,7 +12,7 @@ Just include this JS dependency. Doesn't need JQuery.
 ```
 
 
-```javascript
+```html
 <script>
 
   // define a callback to handle the results
