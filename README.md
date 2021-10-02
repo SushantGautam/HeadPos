@@ -1,6 +1,3 @@
-# HeadPos
-The one line library for Head Position in JavaScript
-
 # Demo
 Check the [live demo](https://sushantgautam.github.io/HeadPos/demo.html "live demo").
 
@@ -21,7 +18,6 @@ Check the [live demo](https://sushantgautam.github.io/HeadPos/demo.html "live de
     OnResults,  //callback on results
     HeadPosDIV = document.getElementById('headpos'), // div to render video canvas
     interval = 0 ); // time in ms to wait between callbacks, 0 is as fast as possible
-
 </script>
 ```
 
@@ -38,3 +34,9 @@ VerticalMagnitude: 1.3243558415961285,
 pose: {"..."}
 }
 ```
+# Improving
+PRs, ideas or suggestions are highly welcome. 👌
+
+# Built With
+- [google/mediapipe](https://google.github.io/mediapipe/solutions/face_detection#javascript-solution-api "google/mediapipe")
+- [jhabdas/fetch-inject](https://code.habd.as/jhabdas/fetch-inject "jhabdas/fetch-inject")
