@@ -34,6 +34,8 @@ VerticalMagnitude: 1.3243558415961285,
 pose: {"..."}
 }
 ```
+**pose** contains a dict with 6 key points (x,y) of right eye, left eye, nose tip, mouth center, right ear tragion, and left ear tragion and a reference to the canvas.
+
 # Improving
 PRs, ideas or suggestions are highly welcome. 👌
 
