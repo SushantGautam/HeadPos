@@ -1,3 +1,5 @@
+This simplified library gives position (up/down/lest/right) of head/face including its magnitude/degree with the six faical keypoints (x,y). This is backed by MediaPipe. The whole library and its dependencies are just in KBs. The memory footprint is very low on realtime environment and can run on very low resources. There are options to control time between inference which reduces unnecessary computations. 
+
 # Demo
 Check the [live demo](https://sushantgautam.github.io/HeadPos/demo.html "live demo").
 
@@ -42,3 +44,40 @@ PRs, ideas or suggestions are highly welcome. 👌
 # Built With
 - [google/mediapipe](https://google.github.io/mediapipe/solutions/face_detection#javascript-solution-api "google/mediapipe")
 - [jhabdas/fetch-inject](https://code.habd.as/jhabdas/fetch-inject "jhabdas/fetch-inject")
+
+
+# Methods
+1. **InitHeadPos** 
+Initialize the instance. This library has a singleton implementation.
+
+```javascript
+let headpos = HeadPos.Init(
+    HeadPosOnResults,  //callback on log value
+    HeadPosDIV = document.getElementById('headpos'), // div to render headpos
+    interval = 100, // time in ms to wait between callbacks, 0 is as fast as possible
+	minDetectionConfidence =0.5, //Face Recognition threshold 
+	 model = "short",  //  short-range model that works best for faces within 2 meters from the camera 
+	 selfieMode = false,  //invert the camera 
+	); 
+
+```
+2. **updateInterval**
+Dynamically udate time in ms to wait between callbacks.
+
+```javascript
+headpos.updateInterval(1000) 
+```
+
+3. **pause**
+Pause the inference. Canvas rendering will also pause.
+
+```javascript
+headpos.pause() 
+```
+
+4. **resume**
+Resume the inference after pause. Canvas rendering will also resume.
+
+```javascript
+headpos.resume() 
+```
