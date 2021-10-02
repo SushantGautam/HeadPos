@@ -1,0 +1,32 @@
+<title> HeadPos Demo </title>
+
+<!-- Just Include this for JS dependencies -->
+<script src="https://cdn.jsdelivr.net/gh/SushantGautam/HeadPos/headpos.js"></script>
+
+<h1>
+  <a href="https://github.com/SushantGautam/HeadPos"> HeadPos</a> Demo
+</h1>
+<div id='preview'></div> <br>
+<!-- headpos div will get preview canvas -->
+<div id='headpos'></div>
+<p> Check console(F12) to see live logs. You can resize video canvas size from Right bottom edge.</p>
+
+<script>
+  OnResults = function (rs) {
+    console.log(rs)
+    // debugger
+    var toAppend = '';
+    for (const [key, value] of Object.entries(rs)) {
+      toAppend += key + ' = ' + value + '<br/>';
+    }
+    document.getElementById('preview').innerHTML = toAppend;
+
+
+  }
+
+  let headpos = HeadPos.Init(
+    OnResults,  //callback on results
+    HeadPosDIV = document.getElementById('headpos'), // div to render video canvas
+    interval = 0); // time in ms to wait between callbacks, 0 is as fast as possible
+
+</script>
