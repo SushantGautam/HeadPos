@@ -1,4 +1,4 @@
-This simplified library gives position (up/down/lest/right) of head/face including its magnitude/degree with the :six: faical keypoints (x,y). This is backed by MediaPipe. The whole library and its dependencies are just in KBs. The memory footprint is very low on realtime environment and can run on very low resources. There are options to control time between inferences which reduces unnecessary computations. 
+This simplified library gives position (up/down/lest/right) of 🙂 head/face including its magnitude/degree with the :six: faical keypoints (x,y). This is backed by MediaPipe. The whole library and its dependencies are just in KBs. The memory footprint is very low on realtime environment and can run on very low resources. There are options to 🎛️ control the time between inferences which reduces unnecessary computations. 
 
 # 🚀 Demo
 Check the [live demo](https://sushantgautam.github.io/HeadPos/demo.html "live demo").
