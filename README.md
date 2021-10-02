@@ -38,13 +38,6 @@ pose: {"..."}
 ```
 **pose** contains a dict with 6 key points (x,y) of right eye, left eye, nose tip, mouth center, right ear tragion, and left ear tragion and a reference to the canvas.
 
-# Improving
-PRs, ideas or suggestions are highly welcome. 👌
-
-# Built With
-- [google/mediapipe](https://google.github.io/mediapipe/solutions/face_detection#javascript-solution-api "google/mediapipe")
-- [jhabdas/fetch-inject](https://code.habd.as/jhabdas/fetch-inject "jhabdas/fetch-inject")
-
 
 # Methods
 1. **InitHeadPos** 
@@ -81,3 +74,11 @@ Resume the inference after pause. Canvas rendering will also resume.
 ```javascript
 headpos.resume() 
 ```
+
+# Improving
+PRs, ideas or suggestions are highly welcome. 👌
+
+# Built With
+- [google/mediapipe](https://google.github.io/mediapipe/solutions/face_detection#javascript-solution-api "google/mediapipe")
+- [jhabdas/fetch-inject](https://code.habd.as/jhabdas/fetch-inject "jhabdas/fetch-inject")
+
