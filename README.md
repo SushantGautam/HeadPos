@@ -1,6 +1,9 @@
 # HeadPos
 The one line library for Head Position in JavaScript
 
+# Demo
+Check the [live demo](https://sushantgautam.github.io/HeadPos/demo.html "live demo").
+
 # Usage
 
 
