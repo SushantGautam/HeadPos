@@ -59,7 +59,7 @@ You can define a div/p element as:
 ```html
 <div id='headpos'></div>
 ```
-and pass rhe element to **HeadPosDIV**. The HeadPos output canvas will be prepended inside the given element. If nothing is passed, the canvas will be appended to the root of HTML.
+and pass the element to **HeadPosDIV**. The HeadPos output canvas will be prepended inside the given element. If nothing is passed, the canvas will be appended to the root of HTML.
 
 2. **updateInterval**
 Dynamically udate time in ms to wait between callbacks.
