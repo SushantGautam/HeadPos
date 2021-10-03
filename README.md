@@ -8,7 +8,7 @@ Check the [live demo](https://sushantgautam.github.io/HeadPos/demo.html "live de
 Just include this JS dependency. Doesn't need JQuery.
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/SushantGautam/HeadPos/v1.0/headpos.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/SushantGautam/HeadPos@v1.0/headpos.js"></script>
 ```
 
 
