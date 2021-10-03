@@ -8,7 +8,7 @@ Check the [live demo](https://sushantgautam.github.io/HeadPos/demo.html "live de
 Just include this JS dependency. Doesn't need JQuery.
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/SushantGautam/HeadPos/headpos.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/SushantGautam/HeadPos/v1.0/headpos.js"></script>
 ```
 
 
@@ -83,7 +83,7 @@ headpos.resume()
 ```
 
 # 🙋 Improving
-PRs,issues, ideas or suggestions are highly welcome. 👌
+PRs, issues, ideas or suggestions are highly welcome. 👌
 
 # 🏭  Built With
 - [google/mediapipe](https://google.github.io/mediapipe/solutions/face_detection#javascript-solution-api "google/mediapipe")
