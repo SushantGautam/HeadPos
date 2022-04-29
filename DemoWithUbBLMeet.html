@@ -1,20 +1,111 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  /* padding: 10px; */
+  height: 100vh; 
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <div id='headpos' ></div>
+
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <div id='ublmeet' style="height: 100vh;"  ></div>
+
+  </div>
+</div>
+
+</body>
+
+
+
+<script src='https://meet.jit.si/external_api.js'></script>
 <script src="https://cdn.jsdelivr.net/gh/SushantGautam/HeadPos@v1.0/headpos.js"></script>
-<div id='headpos' width="200px"></div>
 
 <script>
+    // define a callback to handle the results
+    OnResults = function (rs) {
+        console.log(rs)
+    }
 
-  // define a callback to handle the results
-  OnResults = function (rs) {console.log(rs)}
-  
- // initlialize HeadPos. Other optional congifs can also be added as required.
-let headpos = HeadPos.Init(
-    OnResults,  //callback on log value
-    HeadPosDIV = document.getElementById('headpos'), // div to render headpos
-    interval = 100, // time in ms to wait between callbacks, 0 is as fast as possible
-	minDetectionConfidence =0.5, //Face Recognition threshold 
-	 model = "short",  //  short-range model that works best for faces within 2 meters from the camera 
-	 selfieMode = false,  //invert the camera 
-	);     
+    // initlialize HeadPos. Other optional congifs can also be added as required.
+    let headpos = HeadPos.Init(
+        OnResults,  //callback on log value
+        HeadPosDIV = document.getElementById('headpos'), // div to render headpos
+        interval = 100, // time in ms to wait between callbacks, 0 is as fast as possible
+    	minDetectionConfidence =0.5, //Face Recognition threshold 
+    	 model = "short",  //  short-range model that works best for faces within 2 meters from the camera 
+    	 selfieMode = false,  //invert the camera 
+    	);     
+
+
+    const domain = 'meet.jit.si';
+    const options = {
+        roomName: "hancy",
+        parentNode: document.getElementById('ublmeet'),
+        configOverwrite: {
+            startWithAudioMuted: false,
+            toolbarButtons: ['chat', 'microphone', 'desktop', 'fullscreen', 'camera',
+                //  'closedcaptions', 
+                //   'fodeviceselection',
+                //     'hangup', 'profile', 'recording', 'settings', 'raisehand', 'videoquality',
+                //   'filmstrip',
+                //    'feedback', 'shortcuts', 'tileview', 
+                // 'download', 'help', 'mute-everyone', 'e2ee', 'livestreaming', 'etherpad', 'sharedvideo',
+                // 'settingsmenu', 'invite',
+            ]
+
+        },
+        interfaceConfigOverwrite: {
+            DISABLE_DOMINANT_SPEAKER_INDICATOR: true,
+            DISABLE_FOCUS_INDICATOR: true,
+            DISABLE_JITSI_CONTROLS: true,
+            // filmStripOnly: true,
+        }
+    };
+    const api = new JitsiMeetExternalAPI(domain, options);
+
+
+    api.addListener("filmstripDisplayChanged", function (isVisible) {
+        console.log("api.addListener(filmstripDisplayChanged", isVisible);
+        // debugger
+        if (isVisible.visible) {
+            api.executeCommand("toggleFilmStrip");
+            api.executeCommand('setTileView',
+                false
+            );
+        }
+    });
+
+    window.addEventListener('load', function () {
+        console.log('indow.addEventListener(load')
+        api.executeCommand('toggleFilmStrip');
+    });
+
 </script>
 
-<iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://kr2.ublmeet.com/ubt-EXAMID" style="height: 100%; width: 100%; border: 0px;"></iframe>
+</html>
