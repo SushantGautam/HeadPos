@@ -96,20 +96,7 @@
         // debugger
         if (isVisible.visible) {
             api.executeCommand("toggleFilmStrip");
-            api.executeCommand('setTileView',
-                false
-            );
         }
-    });
-
-
-    api.addListener('participantJoined', function (object) {
-        alert("participantJoined")
-        console.log('indow.addEventListener(participantJoined')
-        api.executeCommand('setTileView',
-            false
-        );
-        api.pinParticipant(api.getParticipantsInfo()[0].participantId);
     });
 
 
@@ -118,9 +105,19 @@
         // debugger
         api.executeCommand('toggleFilmStrip');
 
-        // console.log(participantId[0].participantId)
+        window.setInterval(function () {
+            api.pinParticipant(api._myUserID)
+            api.executeCommand('setTileView',
+                false
+            );
+        }, 1000);
+
 
     });
+
+
+
+
 
 </script>
 
