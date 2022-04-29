@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/gh/SushantGautam/HeadPos@v1.0/headpos.js"></script>
+<div id='headpos' width="200px"></div>
+
+<script>
+
+  // define a callback to handle the results
+  OnResults = function (rs) {console.log(rs)}
+  
+ // initlialize HeadPos. Other optional congifs can also be added as required.
+let headpos = HeadPos.Init(
+    OnResults,  //callback on log value
+    HeadPosDIV = document.getElementById('headpos'), // div to render headpos
+    interval = 100, // time in ms to wait between callbacks, 0 is as fast as possible
+	minDetectionConfidence =0.5, //Face Recognition threshold 
+	 model = "short",  //  short-range model that works best for faces within 2 meters from the camera 
+	 selfieMode = false,  //invert the camera 
+	);     
+</script>
+
+<iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="http://kr2.ublmeet.com/ubt-EXAMID" style="height: 100%; width: 100%; border: 0px;"></iframe>
