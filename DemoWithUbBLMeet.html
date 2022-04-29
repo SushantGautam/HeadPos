@@ -1,43 +1,43 @@
-
-
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  /* padding: 10px; */
-  height: 100vh; 
-  /* Should be removed. Only for demonstration */
-}
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            /* padding: 10px; */
+            height: 100vh;
+            /* Should be removed. Only for demonstration */
+        }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <div id='headpos' ></div>
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <div id='headpos'></div>
 
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <div id='ublmeet' style="height: 100vh;"  ></div>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <div id='ublmeet' style="height: 100vh;"></div>
 
-  </div>
-</div>
+        </div>
+    </div>
 
 </body>
 
@@ -57,10 +57,10 @@
         OnResults,  //callback on log value
         HeadPosDIV = document.getElementById('headpos'), // div to render headpos
         interval = 100, // time in ms to wait between callbacks, 0 is as fast as possible
-    	minDetectionConfidence =0.5, //Face Recognition threshold 
-    	 model = "short",  //  short-range model that works best for faces within 2 meters from the camera 
-    	 selfieMode = false,  //invert the camera 
-    	);     
+        minDetectionConfidence = 0.5, //Face Recognition threshold 
+        model = "short",  //  short-range model that works best for faces within 2 meters from the camera 
+        selfieMode = false,  //invert the camera
+    );
 
 
     const domain = 'kr2.ublmeet.com';
@@ -74,7 +74,8 @@
                 //   'fodeviceselection',
                 //     'hangup', 'profile', 'recording', 'settings', 'raisehand', 'videoquality',
                 //   'filmstrip',
-                //    'feedback', 'shortcuts', 'tileview', 
+                //    'feedback', 'shortcuts', 
+                // 'tileview',
                 // 'download', 'help', 'mute-everyone', 'e2ee', 'livestreaming', 'etherpad', 'sharedvideo',
                 // 'settingsmenu', 'invite',
             ]
@@ -101,9 +102,24 @@
         }
     });
 
+
+    api.addListener('participantJoined', function (object) {
+        alert("participantJoined")
+        console.log('indow.addEventListener(participantJoined')
+        api.executeCommand('setTileView',
+            false
+        );
+        api.pinParticipant(api.getParticipantsInfo()[0].participantId);
+    });
+
+
     window.addEventListener('load', function () {
         console.log('indow.addEventListener(load')
+        // debugger
         api.executeCommand('toggleFilmStrip');
+
+        // console.log(participantId[0].participantId)
+
     });
 
 </script>
